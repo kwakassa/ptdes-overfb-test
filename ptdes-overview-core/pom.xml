@@ -7,7 +7,7 @@
 		<version>${ptdes.project.version}</version>
 	</parent>
 	<artifactId>ptdes-overview-core</artifactId>
-	<packaging>jar</packaging>
+	<packaging>ejb</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -29,10 +29,10 @@
 			<artifactId>caelum-stella-core</artifactId>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.javamoney/moneta -->
-		<dependency>
-			<groupId>org.javamoney</groupId>
-			<artifactId>moneta</artifactId>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.javamoney</groupId> -->
+<!-- 			<artifactId>moneta</artifactId> -->
+<!-- 		</dependency> -->
 		<!-- Modulo Interno de Persistencia -->
 		<dependency>
 			<groupId>br.gov.caixa</groupId>
@@ -40,9 +40,17 @@
 			<version>${parent.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>6.0</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
+		<finalName>overfbCore</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -50,6 +58,13 @@
 				<configuration>
 					<source>${maven.compiler.source}</source>
 					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<configuration>
+					<ejbVersion>3.1</ejbVersion>
 				</configuration>
 			</plugin>
 			<plugin>

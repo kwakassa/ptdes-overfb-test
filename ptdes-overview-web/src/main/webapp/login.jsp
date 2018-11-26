@@ -10,7 +10,7 @@
 		<h1 class="login-titulo">OVERFB - P&aacute;gina de Login</h1>
 		</br>
 		<div align="center">
-			<form name="overfbLogin" action="inicio.jsp" method="post" target="_parent" accept-charset="UTF-8">
+			<form name="overfbLogin" action="login" method="post" target="_parent" accept-charset="UTF-8">
 				<table align="center" width="30%" border="0px">
 					<tr align="center">
 						<td width="10%">Usu&aacute;rio:</td>
@@ -20,7 +20,7 @@
 						<td>Senha:</td>
 						<td><input name="senha" type="password" /></td>
 					</tr>
-					<tr>
+					<tr height="150">
 						<td colspan="2" align="center">
 							<form name="login">
 								<input type="submit" name="botaoLogin" value="Enviar" />

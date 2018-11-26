@@ -12,7 +12,7 @@
 		<jsp:include page="cabecalho-jsp.jsp" />
 		<div>
 			<img src="img/logo2.png" height="45">
-			<h1 class="mesma-linha">PTDES - Overview Frontend e Backend - P&aacute;gina de IN&Iacute;CIO</h1>
+			<h1>PTDES - Overview Frontend e Backend - P&aacute;gina de IN&Iacute;CIO</h1>
 		</div>
 		<br/>
 		

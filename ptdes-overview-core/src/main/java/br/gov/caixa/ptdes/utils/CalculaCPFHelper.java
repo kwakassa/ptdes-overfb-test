@@ -1,7 +1,10 @@
 package br.gov.caixa.ptdes.utils;
 
+import javax.ejb.Stateless;
+
 import org.apache.log4j.Logger;
 
+@Stateless
 public class CalculaCPFHelper {
 	private static final Logger logger = Logger.getLogger(CalculaCPFHelper.class);
 	private static final int[] pesoCPF = { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -17,6 +20,11 @@ public class CalculaCPFHelper {
 	}
 	
 	public String calculaDigitoCpf(String numSemDigito){
+		try{
+			Integer.parseInt(numSemDigito);
+		}catch (NumberFormatException e) {
+			throw new NumberFormatException("Formato Invalido. A Informacao deve ser numerica");
+		}
 		if ((numSemDigito==null) || (numSemDigito.length()!=9)){
 			throw new NumberFormatException("A string do numero deve conter 9 digitos.");
 		}else{
@@ -47,5 +55,12 @@ public class CalculaCPFHelper {
 			logger.error("Cpf deve conter somente numeros",e);
 			return false;
 		}
+	}
+	
+	public String retiraFormatacaoCpf(String cpfComFormatacao){
+		String cpfSemFormatacao = cpfComFormatacao.replace(".", "");
+		cpfSemFormatacao = cpfSemFormatacao.replace("-", "");
+		Long.parseLong(cpfSemFormatacao);//Pode lancar excecao caso contenha letras
+		return cpfSemFormatacao;
 	}
 }

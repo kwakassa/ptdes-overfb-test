@@ -3,7 +3,7 @@
 		<title>Tela de boas-vindas</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/site.css">
+		<link rel="stylesheet" href="css/site.css">		
 	</head>
 	<body>
 		<iframe src="cabecalho-ifr.jsp"></iframe>
